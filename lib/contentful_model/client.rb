@@ -14,13 +14,22 @@ module ContentfulModel
         configuration[:api_url] = PREVIEW_API_URL
         configuration[:access_token] = configuration[:preview_access_token]
       end
-      super({
+
+      configuration = {
         raise_errors: true,
         dynamic_entries: :auto,
         integration_name: 'contentful_model',
         integration_version: ::ContentfulModel::VERSION,
         raise_for_empty_fields: false
-      }.merge(configuration))
+      }.merge(configuration)
+
+      ::Rails.logger.debug "ContentfulModel::Client#initialize #{configuration}"
+
+      if configuration[:delivery_api_only]
+        configuration.merge!(configuration[:delivery_api_only])
+      end
+
+      super(configuration)
     end
   end
 end

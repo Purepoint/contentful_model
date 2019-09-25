@@ -25,7 +25,15 @@ ContentfulModel.configure do |config|
   config.environment = "master" # Optional - defaults to 'master'
   config.default_locale = "en-US" # Optional - defaults to 'en-US'
   config.options = { # Optional
-    #extra options to send to the Contentful::Client
+    # Extra options to send to the Contentful::Client
+    # See https://github.com/contentful/contentful.rb#configuration
+
+    # Optional:
+    # Use `delivery_api_only` and `management_api_only` keys to limit to what API the settings
+    # will apply. For example:
+    delivery_api_only: {
+      timeout_read: 6
+    }
   }
 end
 
