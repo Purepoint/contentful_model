@@ -23,8 +23,6 @@ module ContentfulModel
         raise_for_empty_fields: false
       }.merge(configuration)
 
-      ::Rails.logger.debug "ContentfulModel::Client#initialize #{configuration}"
-
       if configuration[:delivery_api_only]
         configuration.merge!(configuration[:delivery_api_only])
       end

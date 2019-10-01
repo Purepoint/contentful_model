@@ -8,8 +8,6 @@ module ContentfulModel
         options.merge!(options[:management_api_only])
       end
 
-      ::Rails.logger.debug "ContentfulModel::Management#initialize #{options}"
-
       super(ContentfulModel.configuration.management_token, options)
     end
   end
