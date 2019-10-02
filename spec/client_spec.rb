@@ -5,12 +5,12 @@ describe ContentfulModel::Client do
     described_class.new({
       space: 'cfexampleapi',
       access_token: 'b4c0n73n7fu1',
-      management_api_only: {
+      management_api: {
         timeout_connect: 3,
         timeout_read: 6,
         timeout_write: 20
       },
-      delivery_api_only: {
+      delivery_api: {
         timeout_connect: 4,
         timeout_read: 7,
         timeout_write: 21

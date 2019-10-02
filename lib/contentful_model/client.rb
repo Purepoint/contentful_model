@@ -23,8 +23,8 @@ module ContentfulModel
         raise_for_empty_fields: false
       }.merge(configuration)
 
-      if configuration[:delivery_api_only]
-        configuration.merge!(configuration[:delivery_api_only])
+      if configuration[:delivery_api]
+        configuration.merge!(configuration[:delivery_api])
       end
 
       super(configuration)

@@ -5,10 +5,10 @@ describe ContentfulModel::Management do
     ContentfulModel.configure do |c|
       c.management_token = 'foobar'
       c.options = {
-        management_api_only: {
+        management_api: {
           timeout_read: 6
         },
-        delivery_api_only: {
+        delivery_api: {
           timeout_read: 7
         }
       }
