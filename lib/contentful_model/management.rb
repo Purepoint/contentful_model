@@ -4,6 +4,10 @@ module ContentfulModel
     def initialize(options = {})
       options = ContentfulModel.configuration.to_hash.merge!(options)
 
+      if options[:management_api]
+        options.merge!(options[:management_api])
+      end
+
       super(ContentfulModel.configuration.management_token, options)
     end
   end
