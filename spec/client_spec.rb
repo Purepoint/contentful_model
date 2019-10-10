@@ -24,7 +24,9 @@ describe ContentfulModel::Client do
     }
   end
 
-  it 'gets initialized with the configured delivery specific timeout_read' do
-    expect(subject.configuration[:timeout_connect]).to eq(4)
+  it 'gets initialized with the configured delivery specific timeout_connect' do
+    vcr('client') {
+      expect(subject.configuration[:timeout_connect]).to eq(4)
+    }
   end
 end
